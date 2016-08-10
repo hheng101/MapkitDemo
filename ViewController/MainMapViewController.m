@@ -27,6 +27,7 @@
     
     [super viewDidLoad];
     [self initViewController];
+    [self addAnnotaions];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -68,6 +69,27 @@
         }
     }
     self.locationManager.desiredAccuracy = kCLLocationAccuracyBest;
+}
+
+
+#pragma mark - 实例方法
+
+///添加大头针
+- (void)addAnnotaions {
+    
+    CLLocationCoordinate2D location1 = CLLocationCoordinate2DMake(39, 117);
+    Annotation *annotation1 = [[Annotation alloc] init];
+    annotation1.title = @"老司机培训基地";
+    annotation1.subtitle = @"老司机培训基地";
+    annotation1.coordinate = location1;
+    [self.mapView addAnnotation:annotation1];
+    
+    CLLocationCoordinate2D location2 = CLLocationCoordinate2DMake(39.1, 117.1);
+    Annotation *annotation2 = [[Annotation alloc] init];
+    annotation2.title = @"老司机培训基地";
+    annotation2.subtitle = @"老司机培训基地";
+    annotation2.coordinate = location2;
+    [self.mapView addAnnotation:annotation2];
 }
 
 
