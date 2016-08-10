@@ -13,7 +13,6 @@
 		95817B4D1D5AFE5500013977 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 95817B4B1D5AFE5500013977 /* LaunchScreen.storyboard */; };
 		95817B5A1D5B006800013977 /* MainMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 95817B591D5B006800013977 /* MainMapViewController.m */; };
 		95817B5D1D5B02A100013977 /* Annotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 95817B5C1D5B02A100013977 /* Annotation.m */; };
-		95817B601D5B046000013977 /* MyMapView.m in Sources */ = {isa = PBXBuildFile; fileRef = 95817B5F1D5B046000013977 /* MyMapView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,8 +27,6 @@
 		95817B591D5B006800013977 /* MainMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainMapViewController.m; sourceTree = "<group>"; };
 		95817B5B1D5B02A100013977 /* Annotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Annotation.h; sourceTree = "<group>"; };
 		95817B5C1D5B02A100013977 /* Annotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Annotation.m; sourceTree = "<group>"; };
-		95817B5E1D5B046000013977 /* MyMapView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyMapView.h; sourceTree = "<group>"; };
-		95817B5F1D5B046000013977 /* MyMapView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyMapView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,8 +93,6 @@
 		95817B551D5AFEE300013977 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				95817B5E1D5B046000013977 /* MyMapView.h */,
-				95817B5F1D5B046000013977 /* MyMapView.m */,
 			);
 			path = View;
 			sourceTree = SOURCE_ROOT;
@@ -192,7 +187,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				95817B601D5B046000013977 /* MyMapView.m in Sources */,
 				95817B421D5AFE5500013977 /* AppDelegate.m in Sources */,
 				95817B3F1D5AFE5500013977 /* main.m in Sources */,
 				95817B5D1D5B02A100013977 /* Annotation.m in Sources */,
@@ -337,6 +331,7 @@
 				95817B531D5AFE5500013977 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
