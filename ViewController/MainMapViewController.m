@@ -8,20 +8,21 @@
 
 #import "MainMapViewController.h"
 #import <CoreLocation/CoreLocation.h>
-#import <MapKit/MapKit.h>
 #import "Annotation.h"
+#import "MainMapView.h"
 
-@interface MainMapViewController () <MKMapViewDelegate>
+
+@interface MainMapViewController ()
 
 @property (nonatomic, strong) CLLocationManager *locationManager;
-@property (nonatomic, strong) MKMapView *mapView;
+@property (nonatomic, strong) MainMapView *mapView;
 
 @end
 
 @implementation MainMapViewController
 
 
-#pragma mark - 生命周期
+#pragma mark - Life Circle
 
 - (void)viewDidLoad {
     
@@ -43,7 +44,7 @@
 }
 
 
-#pragma mark - 初始化
+#pragma mark - Initialize
 
 - (void)setupViewController {
     
@@ -51,60 +52,22 @@
     [self.view setBackgroundColor:[UIColor whiteColor]];
     
     [self requestLocation];
-    
-    self.mapView = [[MKMapView alloc] initWithFrame:[UIScreen mainScreen].bounds];
-    self.mapView.delegate = self;
-    
-    self.mapView.userTrackingMode = MKUserTrackingModeFollow;
-    self.mapView.mapType = MKMapTypeStandard;
-    
     [self.view addSubview:self.mapView];
-    
     [self addCenterImage];
     
 }
 
 
-#pragma mark - 地图代理
-
-- (void)mapView:(MKMapView *)mapView didUpdateUserLocation:(MKUserLocation *)userLocation {
-    
-    NSLog(@"%@", userLocation);
-    
-}
-
-
-- (void)mapView:(MKMapView *)mapView regionDidChangeAnimated:(BOOL)animated {
-    
-    CLLocationCoordinate2D centerCoordinate = mapView.region.center;
-    //可以用这个方法实现中心点的大头针效果
-    NSLog(@" regionDidChangeAnimated %f,%f",centerCoordinate.latitude, centerCoordinate.longitude);
-}
-
-
-#pragma mark - 私有方法
+#pragma mark - Private Methods
 
 ///添加大头针
 - (void)addAnnotaions {
     
-    CLLocationCoordinate2D location1 = CLLocationCoordinate2DMake(29, 106);
-    Annotation *annotation1 = [[Annotation alloc] init];
-    annotation1.title = @"老司机培训基地";
-    annotation1.subtitle = @"老司机培训基地";
-    annotation1.coordinate = location1;
-    [self.mapView addAnnotation:annotation1];
+    CLLocationCoordinate2D location1 = CLLocationCoordinate2DMake(29.616786, 106.493804);
+    [self.mapView addAnnotationWithCoordinate:location1 title:@"老司机培训基地1" subtitle:@"老司机培训基地1"];
     
-    CLLocationCoordinate2D location2 = CLLocationCoordinate2DMake(29.1, 106.1);
-    Annotation *annotation2 = [[Annotation alloc] init];
-    annotation2.title = @"老司机培训基地";
-    annotation2.subtitle = @"老司机培训基地";
-    annotation2.coordinate = location2;
-    [self.mapView addAnnotation:annotation2];
-    
-    CLLocationCoordinate2D centerCoordinate = self.mapView.region.center;
-    Annotation *centerAnnotation = [[Annotation alloc] init];
-    centerAnnotation.coordinate = centerCoordinate;
-    [self.mapView addAnnotation:centerAnnotation];
+    CLLocationCoordinate2D location2 = CLLocationCoordinate2DMake(29.619922, 106.480840);
+    [self.mapView addAnnotationWithCoordinate:location2 title:@"老司机培训基地2" subtitle:@"老司机培训基地2"];
 }
 
 
@@ -137,5 +100,23 @@
     imageView.frame = centerRect;
     [self.view addSubview:imageView];
 }
+
+
+#pragma mark - Override Get Method
+
+- (MainMapView *)mapView {
+    
+    if (!_mapView) {
+        _mapView = [[MainMapView alloc] init];
+        _mapView.frame = [UIScreen mainScreen].bounds;
+        _mapView.userTrackingMode = MKUserTrackingModeFollow;
+        _mapView.mapType = MKMapTypeStandard;
+    }
+    return _mapView;
+}
+
+
+
+
 
 @end

@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9514C9D21D5C620600044964 /* MainMapViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9514C9D11D5C620600044964 /* MainMapViewModel.m */; };
+		9514C9D51D5C63AC00044964 /* MainMapView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9514C9D41D5C63AC00044964 /* MainMapView.m */; };
+		9514C9D81D5C6DF400044964 /* FacilitatorModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9514C9D71D5C6DF400044964 /* FacilitatorModel.m */; };
 		95817B3F1D5AFE5500013977 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 95817B3E1D5AFE5500013977 /* main.m */; };
 		95817B421D5AFE5500013977 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 95817B411D5AFE5500013977 /* AppDelegate.m */; };
 		95817B4A1D5AFE5500013977 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 95817B491D5AFE5500013977 /* Assets.xcassets */; };
@@ -16,6 +19,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9514C9D01D5C620600044964 /* MainMapViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainMapViewModel.h; sourceTree = "<group>"; };
+		9514C9D11D5C620600044964 /* MainMapViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainMapViewModel.m; sourceTree = "<group>"; };
+		9514C9D31D5C63AC00044964 /* MainMapView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainMapView.h; sourceTree = "<group>"; };
+		9514C9D41D5C63AC00044964 /* MainMapView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainMapView.m; sourceTree = "<group>"; };
+		9514C9D61D5C6DF400044964 /* FacilitatorModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FacilitatorModel.h; sourceTree = "<group>"; };
+		9514C9D71D5C6DF400044964 /* FacilitatorModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FacilitatorModel.m; sourceTree = "<group>"; };
 		95817B3A1D5AFE5500013977 /* MapKitDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MapKitDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		95817B3E1D5AFE5500013977 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		95817B401D5AFE5500013977 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -86,6 +95,8 @@
 			children = (
 				95817B5B1D5B02A100013977 /* Annotation.h */,
 				95817B5C1D5B02A100013977 /* Annotation.m */,
+				9514C9D61D5C6DF400044964 /* FacilitatorModel.h */,
+				9514C9D71D5C6DF400044964 /* FacilitatorModel.m */,
 			);
 			path = Model;
 			sourceTree = SOURCE_ROOT;
@@ -93,6 +104,8 @@
 		95817B551D5AFEE300013977 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				9514C9D31D5C63AC00044964 /* MainMapView.h */,
+				9514C9D41D5C63AC00044964 /* MainMapView.m */,
 			);
 			path = View;
 			sourceTree = SOURCE_ROOT;
@@ -109,6 +122,8 @@
 		95817B571D5AFEE300013977 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				9514C9D01D5C620600044964 /* MainMapViewModel.h */,
+				9514C9D11D5C620600044964 /* MainMapViewModel.m */,
 			);
 			path = ViewModel;
 			sourceTree = SOURCE_ROOT;
@@ -188,7 +203,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9514C9D81D5C6DF400044964 /* FacilitatorModel.m in Sources */,
+				9514C9D21D5C620600044964 /* MainMapViewModel.m in Sources */,
 				95817B421D5AFE5500013977 /* AppDelegate.m in Sources */,
+				9514C9D51D5C63AC00044964 /* MainMapView.m in Sources */,
 				95817B3F1D5AFE5500013977 /* main.m in Sources */,
 				95817B5D1D5B02A100013977 /* Annotation.m in Sources */,
 				95817B5A1D5B006800013977 /* MainMapViewController.m in Sources */,
