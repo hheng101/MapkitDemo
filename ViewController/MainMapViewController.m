@@ -26,9 +26,10 @@
 - (void)viewDidLoad {
     
     [super viewDidLoad];
-    [self initViewController];
+    [self setupViewController];
     [self addAnnotaions];
 }
+
 
 - (void)didReceiveMemoryWarning {
     
@@ -36,9 +37,15 @@
 }
 
 
+- (void)dealloc {
+    
+    [self.locationManager stopUpdatingLocation];
+}
+
+
 #pragma mark - 初始化
 
-- (void)initViewController {
+- (void)setupViewController {
     
     self.title = @"假装是个搜索栏";
     [self.view setBackgroundColor:[UIColor whiteColor]];
@@ -46,7 +53,6 @@
     [self requestLocation];
     
     self.mapView = [[MKMapView alloc] initWithFrame:[UIScreen mainScreen].bounds];
-    
     self.mapView.delegate = self;
     
     self.mapView.userTrackingMode = MKUserTrackingModeFollow;
@@ -59,36 +65,24 @@
 }
 
 
-- (void)requestLocation {
+#pragma mark - 地图代理
+
+- (void)mapView:(MKMapView *)mapView didUpdateUserLocation:(MKUserLocation *)userLocation {
     
-    self.locationManager = [[CLLocationManager alloc] init];
-    if (![CLLocationManager locationServicesEnabled] || [CLLocationManager authorizationStatus] != kCLAuthorizationStatusAuthorizedWhenInUse) {
-        [self.locationManager requestWhenInUseAuthorization];
-        
-        if ([CLLocationManager authorizationStatus] == kCLAuthorizationStatusAuthorizedWhenInUse) {
-            NSLog(@"请求成功");
-        }
-        else {
-            NSLog(@"请求失败");
-        }
-    }
-    self.locationManager.desiredAccuracy = kCLLocationAccuracyBest;
+    NSLog(@"%@", userLocation);
+    
 }
 
 
-///假装加个中心点的大头针
-- (void)addCenterImage {
+- (void)mapView:(MKMapView *)mapView regionDidChangeAnimated:(BOOL)animated {
     
-    UIImage *image = [UIImage imageNamed:@"zhunxing"];
-    UIImageView *imageView = [[UIImageView alloc] initWithImage:image];
-    CGRect centerRect = CGRectMake(self.view.center.x, self.view.center.y, 30, 30);
-    imageView.contentMode = UIViewContentModeScaleToFill;
-    imageView.frame = centerRect;
-    [self.view addSubview:imageView];
+    CLLocationCoordinate2D centerCoordinate = mapView.region.center;
+    //可以用这个方法实现中心点的大头针效果
+    NSLog(@" regionDidChangeAnimated %f,%f",centerCoordinate.latitude, centerCoordinate.longitude);
 }
 
 
-#pragma mark - 实例方法
+#pragma mark - 私有方法
 
 ///添加大头针
 - (void)addAnnotaions {
@@ -114,21 +108,34 @@
 }
 
 
-#pragma mark - 地图代理
-
-- (void)mapView:(MKMapView *)mapView didUpdateUserLocation:(MKUserLocation *)userLocation {
+- (void)requestLocation {
     
-    NSLog(@"%@", userLocation);
+    self.locationManager = [[CLLocationManager alloc] init];
+    if (![CLLocationManager locationServicesEnabled] || [CLLocationManager authorizationStatus] != kCLAuthorizationStatusAuthorizedWhenInUse) {
+        [self.locationManager requestWhenInUseAuthorization];
+        
+        if ([CLLocationManager authorizationStatus] == kCLAuthorizationStatusAuthorizedWhenInUse) {
+            NSLog(@"请求成功");
+        }
+        else {
+            NSLog(@"请求失败");
+        }
+    }
+    self.locationManager.desiredAccuracy = kCLLocationAccuracyBest;
     
+    [self.locationManager startUpdatingLocation];
 }
 
 
-- (void)mapView:(MKMapView *)mapView regionDidChangeAnimated:(BOOL)animated {
+///假装加个中心点的大头针
+- (void)addCenterImage {
     
-    CLLocationCoordinate2D centerCoordinate = mapView.region.center;
-    //可以用这个方法实现中心点的大头针效果
-    NSLog(@" regionDidChangeAnimated %f,%f",centerCoordinate.latitude, centerCoordinate.longitude);
+    UIImage *image = [UIImage imageNamed:@"zhunxing"];
+    UIImageView *imageView = [[UIImageView alloc] initWithImage:image];
+    CGRect centerRect = CGRectMake(self.view.center.x, self.view.center.y, 30, 30);
+    imageView.contentMode = UIViewContentModeScaleToFill;
+    imageView.frame = centerRect;
+    [self.view addSubview:imageView];
 }
-
 
 @end
