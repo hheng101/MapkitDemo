@@ -16,6 +16,15 @@
                               title:(NSString *)title
                            subtitle:(NSString *)subtitle;
 
+- (void)addAnnotationWithCoordinate:(CLLocationCoordinate2D)coordinate
+                              title:(NSString *)title
+                           subtitle:(NSString *)subtitle
+                             detail:(NSString *)detail
+                              price:(NSString *)price
+                         sellNumber:(NSString *)sellNumber
+                               name:(NSString *)name
+                              image:(UIImage *)image;
+
 - (void)addAnnotationWithFacilitatorModel:(FacilitatorModel *)model;
 
 @end

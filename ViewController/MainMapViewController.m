@@ -10,9 +10,9 @@
 #import <CoreLocation/CoreLocation.h>
 #import "Annotation.h"
 #import "MainMapView.h"
+#import "CalloutAnnotationView.h"
 
-
-@interface MainMapViewController ()
+@interface MainMapViewController () <CLLocationManagerDelegate>
 
 @property (nonatomic, strong) CLLocationManager *locationManager;
 @property (nonatomic, strong) MainMapView *mapView;
@@ -55,6 +55,18 @@
     [self.view addSubview:self.mapView];
     [self addCenterImage];
     
+//    CalloutAnnotationView *calloutAnnotationView = [CalloutAnnotationView calloutAnnotationView];
+//    calloutAnnotationView.frame = CGRectMake(0, 100, 300, 120);
+//    [self.view addSubview:calloutAnnotationView];
+    
+}
+
+
+#pragma mark - CLLocationManager Delegate
+
+- (void)locationManager:(CLLocationManager *)manager didChangeAuthorizationStatus:(CLAuthorizationStatus)status {
+    
+    [self requestLocation];
 }
 
 
@@ -64,10 +76,26 @@
 - (void)addAnnotaions {
     
     CLLocationCoordinate2D location1 = CLLocationCoordinate2DMake(29.616786, 106.493804);
-    [self.mapView addAnnotationWithCoordinate:location1 title:@"老司机培训基地1" subtitle:@"老司机培训基地1"];
+    [self.mapView addAnnotationWithCoordinate:location1
+                                        title:@"老司机培训基地1"
+                                     subtitle:@"老司机培训基地1"
+                                       detail:@"专业制作淘宝京东详情页制作各种等等专业制作淘宝京东详情页制作"
+                                        price:@"￥2999"
+                                   sellNumber:@"售出136笔"
+                                         name:@"XX网络宣传制作公司"
+                                        image:[UIImage imageNamed:@"shop_map_annotation"]];
+    //[self.mapView addAnnotationWithCoordinate:location1 title:@"老司机培训基地1" subtitle:@"老司机培训基地1"];
     
     CLLocationCoordinate2D location2 = CLLocationCoordinate2DMake(29.619922, 106.480840);
-    [self.mapView addAnnotationWithCoordinate:location2 title:@"老司机培训基地2" subtitle:@"老司机培训基地2"];
+    [self.mapView addAnnotationWithCoordinate:location2
+                                        title:@"老司机培训基地2"
+                                     subtitle:@"老司机培训基地2"
+                                       detail:@"专业制作淘宝京东详情页制作各种等等专业制作淘宝京东详情页制作"
+                                        price:@"￥1999"
+                                   sellNumber:@"售出236笔"
+                                         name:@"XX网络宣传制作公司"
+                                        image:[UIImage imageNamed:@"shop_map_annotation"]];
+    //[self.mapView addAnnotationWithCoordinate:location2 title:@"老司机培训基地2" subtitle:@"老司机培训基地2"];
 }
 
 

@@ -11,7 +11,7 @@
 @interface FacilitatorModel : NSObject
 
 ///描述
-@property (nonatomic, copy) NSString *desc;
+@property (nonatomic, copy) NSString *detail;
 ///价格
 @property (nonatomic, copy) NSString *price;
 ///交易量

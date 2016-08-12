@@ -16,6 +16,9 @@
 		95817B4D1D5AFE5500013977 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 95817B4B1D5AFE5500013977 /* LaunchScreen.storyboard */; };
 		95817B5A1D5B006800013977 /* MainMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 95817B591D5B006800013977 /* MainMapViewController.m */; };
 		95817B5D1D5B02A100013977 /* Annotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 95817B5C1D5B02A100013977 /* Annotation.m */; };
+		95D0B2381D5D5F5700205F9B /* CalloutAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 95D0B2371D5D5F5700205F9B /* CalloutAnnotation.m */; };
+		95D0B23B1D5D5FBD00205F9B /* CalloutAnnotationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 95D0B23A1D5D5FBD00205F9B /* CalloutAnnotationView.m */; };
+		95D0B23F1D5D6FB500205F9B /* CalloutAnnotationView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 95D0B23E1D5D6FB500205F9B /* CalloutAnnotationView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +39,11 @@
 		95817B591D5B006800013977 /* MainMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainMapViewController.m; sourceTree = "<group>"; };
 		95817B5B1D5B02A100013977 /* Annotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Annotation.h; sourceTree = "<group>"; };
 		95817B5C1D5B02A100013977 /* Annotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Annotation.m; sourceTree = "<group>"; };
+		95D0B2361D5D5F5700205F9B /* CalloutAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalloutAnnotation.h; sourceTree = "<group>"; };
+		95D0B2371D5D5F5700205F9B /* CalloutAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CalloutAnnotation.m; sourceTree = "<group>"; };
+		95D0B2391D5D5FBD00205F9B /* CalloutAnnotationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalloutAnnotationView.h; sourceTree = "<group>"; };
+		95D0B23A1D5D5FBD00205F9B /* CalloutAnnotationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CalloutAnnotationView.m; sourceTree = "<group>"; };
+		95D0B23E1D5D6FB500205F9B /* CalloutAnnotationView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CalloutAnnotationView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +105,8 @@
 				95817B5C1D5B02A100013977 /* Annotation.m */,
 				9514C9D61D5C6DF400044964 /* FacilitatorModel.h */,
 				9514C9D71D5C6DF400044964 /* FacilitatorModel.m */,
+				95D0B2361D5D5F5700205F9B /* CalloutAnnotation.h */,
+				95D0B2371D5D5F5700205F9B /* CalloutAnnotation.m */,
 			);
 			path = Model;
 			sourceTree = SOURCE_ROOT;
@@ -106,6 +116,9 @@
 			children = (
 				9514C9D31D5C63AC00044964 /* MainMapView.h */,
 				9514C9D41D5C63AC00044964 /* MainMapView.m */,
+				95D0B2391D5D5FBD00205F9B /* CalloutAnnotationView.h */,
+				95D0B23A1D5D5FBD00205F9B /* CalloutAnnotationView.m */,
+				95D0B23E1D5D6FB500205F9B /* CalloutAnnotationView.xib */,
 			);
 			path = View;
 			sourceTree = SOURCE_ROOT;
@@ -191,6 +204,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				95D0B23F1D5D6FB500205F9B /* CalloutAnnotationView.xib in Resources */,
 				95817B4D1D5AFE5500013977 /* LaunchScreen.storyboard in Resources */,
 				95817B4A1D5AFE5500013977 /* Assets.xcassets in Resources */,
 			);
@@ -206,8 +220,10 @@
 				9514C9D81D5C6DF400044964 /* FacilitatorModel.m in Sources */,
 				9514C9D21D5C620600044964 /* MainMapViewModel.m in Sources */,
 				95817B421D5AFE5500013977 /* AppDelegate.m in Sources */,
+				95D0B23B1D5D5FBD00205F9B /* CalloutAnnotationView.m in Sources */,
 				9514C9D51D5C63AC00044964 /* MainMapView.m in Sources */,
 				95817B3F1D5AFE5500013977 /* main.m in Sources */,
+				95D0B2381D5D5F5700205F9B /* CalloutAnnotation.m in Sources */,
 				95817B5D1D5B02A100013977 /* Annotation.m in Sources */,
 				95817B5A1D5B006800013977 /* MainMapViewController.m in Sources */,
 			);
